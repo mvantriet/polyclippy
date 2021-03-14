@@ -1,3 +1,6 @@
 add_subdirectory (point)
 add_subdirectory (util)
 add_subdirectory (edge)
+add_subdirectory (shape)
+add_subdirectory (polygon)
+add_subdirectory (lib)
