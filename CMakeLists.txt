@@ -13,5 +13,15 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
+if(CMAKE_BUILD_TYPE MATCHES debug)
+    add_definitions(-DDEBUG)
+endif(CMAKE_BUILD_TYPE MATCHES debug)
+
 set(SRC_DIR src)
 add_subdirectory (${SRC_DIR})
+
+if(RUN_TESTS)
+    MESSAGE("<< BUILDING AND RUNNING TESTS >>")
+    enable_testing()
+    add_subdirectory(test)
+endif()
